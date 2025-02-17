@@ -353,9 +353,9 @@
 //|---------------|-------------|-----------|---------------|---------------|-------------|
    &trans          &trans        &trans      &trans          &trans          &trans
    &trans          &trans        &trans      &mo SCROLL_TP   &none           &mo SCROLL_TP
-   &trans          &trans        &trans      &trans          &trans          &mo SCROLL_TP
+   &trans          &mkp MCLK     &trans      &trans          &trans          &mo SCROLL_TP
    &trans          &trans        &trans      &mo SCROLL_TP   &none           &mo SCROLL_TP
-   &mkp MCLK       &mkp RCLK                                 &trans          &trans
+   &mkp LCLK       &mkp RCLK                                 &trans          &trans
 
 // DPAD
 // Left    Down    Middle      Up      Right

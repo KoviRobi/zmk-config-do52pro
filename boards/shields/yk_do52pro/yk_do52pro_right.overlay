@@ -490,12 +490,19 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 
 /{
+    /omit-if-no-ref/ zip_mouse_layer: zip_mouse_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <200>;
+    };
+
     trackpoint_listener: trackpoint_listener {
         compatible = "zmk,input-listener";
         device = <&mouse_ps2>;
         input-processors =
           <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,
-          <&zip_xy_scaler 1 2>;
+          <&zip_xy_scaler 1 2>,
+          <&zip_mouse_layer 9 400>;
         fine_select {
             layers = <3>; // MIRROR
             input-processors =
