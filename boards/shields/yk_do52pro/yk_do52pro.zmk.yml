@@ -2,7 +2,7 @@ file_format: "1"
 id: yk_do52pro
 name: YK D052Pro
 type: shield
-url: https://github.com/filippor/kb_zmk_ps2_mouse_trackpoint_driver-zmk_config
+url: https://github.com/KoviRobi/zmk-config-do52pro
 requires: [pro_micro]
 exposes: []
 features:
