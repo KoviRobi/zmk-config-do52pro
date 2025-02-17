@@ -31,7 +31,7 @@
 #define BASE      0
 #define GAME      1
 #define GAME_M    2
-#define NAVIG     3
+#define MIRROR    3
 #define NUMBER    4
 #define SYMBOL    5
 #define MEDIA     6
@@ -125,12 +125,12 @@
     Base_layer {
       display-name = "Base";
       bindings = <
-//|-----------------|-------------|-----------|------------|-----------------|--------------|   |---------------|--------------|-----------|---------------|---------------|------------------|
-   &kp GRAVE         &kp N1        &kp N2      &kp N3       &kp N4            &kp N5             &kp N6          &kp N7        &kp N8       &kp N9          &kp N0          &kp MINUS
-   &kp LBKT          &kp Q         &hml RALT W &kp E        &kp R             &kp T              &kp Y           &kp U         &kp I        &tl SCROLL_TP O &tl MOUSE P     &tl SCROLL_TP EQUAL
-   &kp RBKT          &hml LMETA A  &hml LALT S &hml LCTRL D &hml LSHIFT F     &kp G              &kp H           &hml LSHIFT J &hmr LCTRL K &hmr LALT L     &hmr LMETA SEMI &tl SCROLL_TP SQT
-   &kp LSHFT         &kp Z         &hml RALT X &kp C        &kp V             &kp B              &kp N           &kp M         &kp COMMA    &hmr RALT DOT   &tl MOUSE FSLH  &tl SCROLL_TP BSLH
-   &kp LCTRL         &kp LMETA                              &tl FUNCTION ESC  &tl SYMBOL TAB     &tl MEDIA DEL   &tl CONFIG RET                             &kp LALT        &kp RALT
+//|-----------------|-------------|-------------|------------|-----------------|--------------|   |---------------|-------------|----------------|---------------|----------------|-------------|
+   &kp EQUAL         &kp N1        &kp N2        &kp N3       &kp N4            &kp N5             &kp N0          &kp N6        &kp N7           &kp N8          &kp N9           &kp MINUS
+   &kp BSLH          &kp Q         &hml RALT W   &kp E        &kp R             &kp T              &kp Y           &kp U         &kp I            &tl SCROLL_TP O &tl MOUSE P      &tl SCROLL_TP EQUAL
+   &kp ESC           &hml LSHIFT A &hml LSHIFT S &hml LCTRL D &hml LCTRL F      &kp G              &kp H           &hmr RCTRL J  &hmr RCTRL K     &hmr RSHIFT L   &hmr RSHIFT SEMI &tl SCROLL_TP SQT
+   &hml LSHFT LPAR   &hml LMETA Z  &hml LMETA X  &hml LALT C  &hml LALT V       &tl MIRROR B       &tl MIRROR N    &hmr RALT  M  &hmr RALT  COMMA &hmr RMETA DOT  &hmr RMETA FSLH  &hmr RSHFT RPAR
+   &kp LCTRL         &kp LMETA                                &tl MIRROR SPACE  &tl SYMBOL BSPC    &tl CONFIG TAB  &tl MIRROR RET                                 &kp LALT         &kp RALT
                                              // DPAD  Left,     Down,      Middle,     Up,        Right
                                                       &kp LEFT  &kp DOWN   &kp PSCRN   &kp UP     &kp RIGHT
                                                       &kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
@@ -167,18 +167,18 @@
       >;
     };
 //3
-    Nav_layer {
-      display-name = "Nav";
+    Mirror_layer {
+      display-name = "Mirror";
          bindings = <
-//|------------|-------------|-----------|-----------|---------------|---------------|   |---------------|-------------|-----------|-------------|---------------|------------|
-   &trans       &trans        &trans      &trans      &trans          &trans              &trans          &trans        &trans      &trans        &trans          &trans
-   &trans       &kp HOME      &kp PG_UP   &kp PG_DN   &kp END         &trans              &trans          &kp RA(GRAVE) &kp RA(SQT) &trans        &trans          &trans
-   &trans       &kp LEFT      &kp DOWN    &kp UP      &kp RIGHT       &caps_word          &trans          &kp LSHIFT    &kp LCTRL   &kp LALT      &kp LMETA       &trans
-   &trans       &trans        &trans      &trans      &trans          &trans              &trans          &trans        &trans      &kp RALT      &trans          &trans
-   &trans       &trans                                &caps_word      &kp LBKT            &trans          &trans                                  &trans          &trans
-                                        // DPAD Left,      Down,   Middle,     Up,     Right
-                                                &trans     &trans  &trans      &trans  &trans
-                                                &trans     &trans  &trans      &trans  &trans
+//|-------------------|----------------|---------------|----------------|--------------|--------------|   |-----------------|-----------------|------------|-------------|-------------|---------------|
+   &kp MINUS           &kp N9           &kp N8          &kp N7           &kp N6         &kp N0             &kp N5            &kp N4            &kp N3       &kp N2        &kp N1        &kp EQUAL
+   &tl SCROLL_TP EQUAL &tl MOUSE P      &tl SCROLL_TP O &kp I            &kp U          &kp Y              &kp T             &kp R             &kp E        &hml RALT W   &kp Q         &kp BSLH
+   &tl SCROLL_TP SQT   &hmr RSHIFT SEMI &hmr RSHIFT L   &hmr RCTRL K     &hmr RCTRL J   &kp H              &kp G             &hml LCTRL F      &hml LCTRL D &hml LSHIFT S &hml LSHIFT A &kp ESC
+   &hmr RSHFT RPAR     &hmr RMETA FSLH  &hmr RMETA DOT  &hmr RALT  COMMA &hmr RALT  M   &tl MIRROR N       &tl MIRROR B      &hml LALT V       &hml LALT C  &hml LMETA X  &hml LMETA Z  &hml LSHFT LPAR
+   &kp RALT            &kp LALT                                          &tl MIRROR RET &tl CONFIG TAB     &tl SYMBOL BSPC   &tl MIRROR SPACE  &kp LMETA                                &kp LCTRL
+                                             // DPAD  Left,     Down,      Middle,     Up,        Right
+                                                      &kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
+                                                      &kp LEFT  &kp DOWN   &kp PSCRN   &kp UP     &kp RIGHT
       >;
     };
 //4
