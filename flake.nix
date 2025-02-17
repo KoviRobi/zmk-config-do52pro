@@ -41,6 +41,7 @@
           zephyr.hosttools-nix
           pkgs.cmake
           pkgs.ninja
+          pkgs.uv
         ];
       };
     };

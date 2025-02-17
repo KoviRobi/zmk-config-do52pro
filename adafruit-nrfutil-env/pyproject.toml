@@ -1,0 +1,9 @@
+[project]
+name = "adafruit-nrfutil-env"
+version = "0.1.0"
+description = "Development environment with adafruit-nrfutil installed"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "adafruit-nrfutil>=0.5.3.post16",
+]
