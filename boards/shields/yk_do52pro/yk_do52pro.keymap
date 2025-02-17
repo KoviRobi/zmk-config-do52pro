@@ -246,19 +246,19 @@
     Symb_layer {
       display-name = "Symbol";
           bindings = <
-//|--------------|-------------|-----------|-----------|---------------|---------------|
-   &studio_unlock &kp F1        &kp F2      &kp F3      &kp F4          &kp F5
-   &trans         &trans        &kp RALT    &trans      &trans          &trans
-   &tog GAME_M    &kp LMETA     &kp LALT    &kp LCTRL   &kp LSHIFT      &trans
-   &tog GAME      &trans        &kp RALT    &trans      &trans          &trans
-   &to BASE       &trans                                &trans          &trans
+//|--------------|-------------|--------------|-----------|---------------|---------------|
+   &kp F1         &kp F2        &kp F3         &kp F4      &kp F5          &kp F6
+   &kp PLUS       &kp STAR      &kp AMPERSAND  &kp RPAR    &kp LPAR        &kp TILDE
+   &kp DQT        &kp CARET     &kp PERCENT    &kp RBRC    &kp LBRC        &kp DOLLAR
+   &kp UNDER      &kp HASH      &kp AT         &kp RBKT    &kp LBKT        &kp EXCL
+   &tog GAME      &tog GAME_M                              &to BASE        &trans
 
 //|---------------|-------------|-------------|-------------|---------------|------------|
-   &kp F6          &kp F7        &kp F8        &kp F9        &kp F10         &kp F11
-   &kp TILDE       &kp AMPERSAND &kp STAR      &kp LPAR      &kp PLUS        &kp F12
-   &kp LBRC        &kp DOLLAR    &kp PERCENT   &kp CARET     &kp DQT         &trans
-   &kp RBRC        &kp EXCL      &kp AT        &kp HASH      &kp PIPE        &trans
-   &kp RPAR        &kp UNDER                                 &trans          &trans
+   &kp F7          &kp F8        &kp F9        &kp F10       &kp F11         &kp F12
+   &kp TILDE       &kp LPAR      &kp RPAR      &kp AMPERSAND &kp STAR        &kp PLUS
+   &kp DOLLAR      &kp LBRC      &kp RBRC      &kp PERCENT   &kp CARET       &kp DQT
+   &kp EXCL        &kp LBKT      &kp RBKT      &kp AT        &kp HASH        &kp UNDER
+   &trans          &to BASE                                  &tog GAME_M     &tog GAME
 
 // DPAD
 // Left     Down    Middle      Up      Right
