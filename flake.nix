@@ -5,6 +5,8 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
     # Customize the version of Zephyr used by the flake here
     zephyr = {
       url = "github:zmkfirmware/zephyr/v3.5.0+zmk-fixes";
@@ -19,33 +21,38 @@
   };
 
   outputs =
-    {
-      nixpkgs,
-      zephyr-nix,
-      ...
-    }:
-    let
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-      zephyr = zephyr-nix.packages.x86_64-linux;
-    in
-    {
-      devShells.x86_64-linux.default = pkgs.mkShell {
-        packages = [
-          (zephyr.sdk.override {
-            targets = [
-              "arm-zephyr-eabi"
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+      ];
+
+      perSystem =
+        { inputs', ... }:
+        let
+          pkgs = inputs'.nixpkgs.legacyPackages;
+          zephyr = inputs'.zephyr-nix.packages;
+        in
+        {
+          devShells.default = pkgs.mkShell {
+            packages = [
+              (zephyr.sdk.override {
+                targets = [
+                  "arm-zephyr-eabi"
+                ];
+              })
+              zephyr.pythonEnv
+              # Use zephyr.hosttools-nix to use nixpkgs built tooling instead of official Zephyr binaries
+              zephyr.hosttools-nix
+              pkgs.cmake
+              pkgs.ninja
+              pkgs.uv
+              pkgs.gcc-arm-embedded
             ];
-          })
-          zephyr.pythonEnv
-          # Use zephyr.hosttools-nix to use nixpkgs built tooling instead of official Zephyr binaries
-          zephyr.hosttools-nix
-          pkgs.cmake
-          pkgs.ninja
-          pkgs.uv
-          pkgs.gcc-arm-embedded
-        ];
-        CMAKE_EXPORT_COMPILE_COMMANDS = "ON";
-        CMAKE_GENERATOR = "Ninja";
-      };
+            CMAKE_EXPORT_COMPILE_COMMANDS = "ON";
+            CMAKE_GENERATOR = "Ninja";
+          };
+        };
     };
 }
