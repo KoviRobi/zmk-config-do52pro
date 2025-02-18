@@ -54,9 +54,13 @@
       ];
 
       perSystem =
-        { inputs', ... }:
+        {
+          system,
+          pkgs,
+          inputs',
+          ...
+        }:
         let
-          pkgs = inputs'.nixpkgs.legacyPackages;
           zephyr = inputs'.zephyr-nix.packages;
 
           # adafruit-nrfutil-env
@@ -94,6 +98,22 @@
           venv = pythonSet.mkVirtualEnv "venv" workspace.deps.default;
         in
         {
+          _module.args.pkgs = import inputs.nixpkgs {
+            inherit system;
+            config = {
+              allowUnfreePredicate =
+                pkg:
+                builtins.elem (inputs.nixpkgs.lib.getName pkg) [
+                  "nrf-command-line-tools"
+                  "segger-jlink"
+                ];
+              segger-jlink.acceptLicense = true;
+              permittedInsecurePackages = [
+                "segger-jlink-qt4-810"
+              ];
+            };
+          };
+
           devShells.default = pkgs.mkShell {
             packages = [
               (zephyr.sdk.override {
@@ -108,6 +128,7 @@
               pkgs.ninja
               pkgs.uv
               pkgs.gcc-arm-embedded
+              pkgs.nrf-command-line-tools
               venv
             ];
             CMAKE_EXPORT_COMPILE_COMMANDS = "ON";
