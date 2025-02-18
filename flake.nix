@@ -42,7 +42,10 @@
           pkgs.cmake
           pkgs.ninja
           pkgs.uv
+          pkgs.gcc-arm-embedded
         ];
+        CMAKE_EXPORT_COMPILE_COMMANDS = "ON";
+        CMAKE_GENERATOR = "Ninja";
       };
     };
 }
