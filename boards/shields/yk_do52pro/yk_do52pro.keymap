@@ -86,7 +86,7 @@
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
@@ -98,7 +98,7 @@
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
@@ -108,7 +108,7 @@
         tl: thumb_layer {
             compatible = "zmk,behavior-hold-tap";
              flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
