@@ -371,8 +371,8 @@
 //|---------------|-------------|-----------|---------------|---------------|-------------|
    &trans          &trans        &trans      &trans          &trans          &trans
    &trans          &trans        &trans      &mo SCROLL_TP   &none           &mo SCROLL_TP
-   &trans          &mkp MCLK     &trans      &trans          &trans          &mo SCROLL_TP
-   &trans          &trans        &trans      &mo SCROLL_TP   &none           &mo SCROLL_TP
+   &trans          &trans        &mkp MCLK   &mo SCROLL_TP   &trans          &mo SCROLL_TP
+   &trans          &trans        &mkp MCLK   &mo SCROLL_TP   &none           &mo SCROLL_TP
    &mkp LCLK       &mkp RCLK                                 &trans          &trans
 
 // DPAD
