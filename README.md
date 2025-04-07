@@ -11,3 +11,6 @@ half-height Cherry MX stem compatible switches, and some low-profile keycaps (I
 have the [XVX skyline keycaps](
 https://www.xvxchannel.com/collections/low-profile-keycaps/products/xvx-skyline-137-key-low-profile-double-shot-keycap-set-8-colors),
 the keycaps are the same height as the plastics, which is very pleasing.
+
+## Keymap
+![Plot of keymap found in boards/shields/yk_do52pro/yk_do52pro.keymap](keymap-drawer-env/keymap.svg)
