@@ -1,0 +1,8 @@
+[project]
+name = "keymap-drawer-env"
+version = "0.1.0"
+description = "Environment with github/caksoylar/keymap-drawer installed"
+requires-python = ">=3.12"
+dependencies = [
+    "keymap-drawer>=0.20.0",
+]

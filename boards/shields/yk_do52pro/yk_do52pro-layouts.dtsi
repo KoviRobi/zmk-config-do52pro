@@ -64,7 +64,6 @@
             , <&key_physical_attrs 100 100  100  475       0     0     0>
             , <&key_physical_attrs 100 100  400  450       0     0     0>
             , <&key_physical_attrs 100 100  500  475       0     0     0>
-            , <&key_physical_attrs 100 100  550  575       0     0     0>
             // Number row
             , <&key_physical_attrs 100 100 1000   50       0     0     0>
             , <&key_physical_attrs 100 100 1100   25       0     0     0>
@@ -94,7 +93,6 @@
             , <&key_physical_attrs 100 100 1400  350       0     0     0>
             , <&key_physical_attrs 100 100 1500  375       0     0     0>
             // Thumb row
-            , <&key_physical_attrs 100 100  950  575       0     0     0>
             , <&key_physical_attrs 100 100 1000  475       0     0     0>
             , <&key_physical_attrs 100 100 1100  450       0     0     0>
             , <&key_physical_attrs 100 100 1400  475       0     0     0>
