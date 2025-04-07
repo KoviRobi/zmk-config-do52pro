@@ -265,8 +265,8 @@
 //|--------------|-------------|--------------|-----------|---------------|---------------|
    &kp F1         &kp F2        &kp F3         &kp F4      &kp F5          &kp F6
    &kp PLUS       &kp STAR      &kp AMPERSAND  &kp RPAR    &kp TILDE       &kp AT
-   &kp DQT        &kp CARET     &kp PERCENT    &kp RBRC    &kp LBRC        &kp DOLLAR
-   &kp UNDER      &kp HASH      &kp GRAVE      &kp RBKT    &kp LBKT        &kp EXCL
+   &kp DQT        &kp CARET     &kp PERCENT    &kp LBRC    &kp RBRC        &kp DOLLAR
+   &kp UNDER      &kp HASH      &kp GRAVE      &kp LBKT    &kp RBKT        &kp EXCL
    &tog GAME      &tog GAME_M                              &to BASE        &trans
 
 //|---------------|-------------|-------------|-------------|---------------|------------|
