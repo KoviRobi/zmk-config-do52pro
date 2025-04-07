@@ -74,7 +74,7 @@
 #endif  // HAS_MOUSE_TP
 
 
-#define QUICK_TAP_MS 175
+#define QUICK_TAP_MS 150
 
 
 // Disable line-wrap in your editor to see a "visualization" of the key layouts
@@ -170,7 +170,7 @@
    &kp LBKT          &kp Q         &kp W       &kp E        &kp R             &kp T
    &kp RBKT          &kp A         &kp S       &kp D        &kp F             &kp G
    &kp LSHFT         &kp Z         &kp X       &kp C        &kp V             &kp B
-   &kp LCTRL         &kp LMETA                              &kp ESC           &tl SYMBOL TAB
+   &kp LCTRL         &kp ESC                                &kp SPACE         &tl SYMBOL TAB
 
 //|---------------|-------------|------------|---------------|---------------|------------|
    &kp N6          &kp N7        &kp N8       &kp N9          &kp N0          &kp MINUS
@@ -194,7 +194,7 @@
    &kp LBKT          &kp Q         &kp W       &kp E        &kp R             &kp T
    &kp RBKT          &kp A         &kp S       &kp D        &kp F             &kp G
    &kp LSHFT         &kp Z         &kp X       &kp C        &kp V             &kp B
-   &kp LCTRL         &kp DEL                                &kp ESC           &tl SYMBOL TAB
+   &kp LCTRL         &kp ESC                                &kp SPACE         &tl SYMBOL TAB
 
 //|---------------|-------------|------------|---------------|---------------|------------|
    &kp N6          &kp N7        &kp N8       &kp N9          &kp N0          &kp MINUS
