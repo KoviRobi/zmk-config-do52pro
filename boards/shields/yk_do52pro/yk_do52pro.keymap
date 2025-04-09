@@ -74,7 +74,8 @@
 #endif  // HAS_MOUSE_TP
 
 
-#define QUICK_TAP_MS 150
+#define QUICK_TAP_MS 250
+#define TAPPING_TERM_MS 175
 
 
 // Disable line-wrap in your editor to see a "visualization" of the key layouts
@@ -86,7 +87,7 @@
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
@@ -98,7 +99,7 @@
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
@@ -108,7 +109,7 @@
         tl: thumb_layer {
             compatible = "zmk,behavior-hold-tap";
              flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
@@ -119,14 +120,14 @@
         tdcaps: tap_dance_capslock {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
             bindings = <&kp LPAR>, <&kp CAPSLOCK>;
         };
 
         lshift: magic_left_shift {
             compatible = "zmk,behavior-hold-tap";
             flavor = "balanced";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <TAPPING_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;                // repeat on tap-into-hold
             require-prior-idle-ms = <15>;
             #binding-cells = <2>;
