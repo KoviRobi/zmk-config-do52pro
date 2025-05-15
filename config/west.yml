@@ -6,10 +6,12 @@ manifest:
       url-base: https://github.com/urob
     - name: badjeff
       url-base: https://github.com/badjeff
+    - name: phuertay
+      url-base: https://github.com/phuertay
 
   projects:
     - name: zmk
-      remote: zmkfirmware
+      remote: phuertay
       revision: main
       import: app/west.yml
 
