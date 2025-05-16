@@ -30,16 +30,12 @@
 
 #define BASE      0
 #define GAME      1
-#define GAME_M    2
-#define MIRROR    3
-#define NUMBER    4
-#define SYMBOL    5
-#define MEDIA     6
-#define FUNCTION  7
-#define CONFIG    8
-#define MOUSE     9
-#define SCROLL_TP 10
-#define PLOVER    11
+#define MIRROR    2
+#define SYMBOL    3
+#define CONFIG    4
+#define MOUSE     5
+#define SCROLL_TP 6
+#define PLOVER    7
 
 #ifdef HAS_MOUSE_KEYS
   #include <dt-bindings/zmk/mouse.h>
@@ -136,7 +132,7 @@
             hold-trigger-on-release;             // delay positional check until key-release
         };
   };
-  //0
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -163,7 +159,7 @@
 &kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
       >;
     };
-//1
+
       Game_layer {
       display-name = "Game";
       bindings = <
@@ -187,31 +183,7 @@
 &kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
       >;
     };
-//2
-      GameMouse_layer {
-      display-name = "Game Mouse";
-      bindings = <
-//|-----------------|-------------|-----------|------------|-----------------|--------------|
-   &kp GRAVE         &kp N1        &kp N2      &kp N3       &kp N4            &kp N5
-   &kp LBKT          &kp Q         &kp W       &kp E        &kp R             &kp T
-   &kp RBKT          &kp A         &kp S       &kp D        &kp F             &kp G
-   &kp LSHFT         &kp Z         &kp X       &kp C        &kp V             &kp B
-   &kp LCTRL         &kp ESC                                &kp SPACE         &tl SYMBOL TAB
 
-//|---------------|-------------|------------|---------------|---------------|------------|
-   &kp N6          &kp N7        &kp N8       &kp N9          &kp N0          &kp MINUS
-   &kp Y           &kp U         &kp I        &kp O           &kp P           &kp EQUAL
-   &kp H           &kp J         &kp K        &kp L           &kp SEMI        &kp SQT
-   &kp N           &kp M         &kp COMMA    &kp DOT         &kp FSLH        &kp BSLH
-   &mkp MCLK       &mkp RCLK                                  &kp LALT        &kp RET
-
-// DPAD
-// Left   Down       Middle      Up         Right
-&kp LEFT  &kp DOWN   &kp BSPC    &kp UP     &kp RIGHT
-&kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
-      >;
-    };
-//3
     Mirror_layer {
       display-name = "Mirror";
          bindings = <
@@ -235,33 +207,8 @@
 &kp LEFT  &kp DOWN   &kp PSCRN   &kp UP     &kp RIGHT
       >;
     };
-//4
-    Num_layer {
-      display-name = "Number";
-        bindings = <
-//|------------|-------------|-----------|-----------|---------------|---------------|
-   &kp F12      &kp F1        &kp F2      &kp F3      &kp F4          &kp F5
-   &trans       &trans        &kp RALT    &trans      &trans          &trans
-   &trans       &kp LMETA     &kp LALT    &kp LCTRL   &kp LSHIFT      &trans
-   &trans       &trans        &kp RALT    &trans      &trans          &trans
-   &trans       &trans                                &trans          &trans
 
-//|---------------|-------------|-------------|-------------|---------------|------------|
-   &kp F6          &kp F7        &kp F8        &kp F9        &kp F10         &kp F11
-   &kp GRAVE       &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL       &kp F12
-   &kp LBKT        &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp SQT         &trans
-   &kp RBKT        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp BSLH        &trans
-   &kp NUMBER_0    &kp MINUS                                 &trans          &trans
-
-// DPAD
-// Left    Down    Middle      Up      Right
-&trans     &trans  &trans      &trans  &trans
-&trans     &trans  &trans      &trans  &trans
-      >;
-    };
-
-  //5
-    Symb_layer {
+    Symbol_layer {
       display-name = "Symbol";
           bindings = <
 //|--------------|-------------|--------------|-----------|---------------|---------------|
@@ -276,65 +223,15 @@
    &kp AT          &kp TILDE     &kp CARET     &kp AMPERSAND &kp STAR        &kp PLUS
    &kp DOLLAR      &kp LBRC      &kp RBRC      &kp PERCENT   &kp COLON       &kp DQT
    &kp EXCL        &kp LBKT      &kp RBKT      &kp GRAVE     &kp HASH        &kp UNDER
-   &trans          &to BASE                                  &tog GAME_M     &tog GAME
+   &trans          &to BASE                                  &none           &tog GAME
 
 // DPAD
-// Left     Down    Middle      Up      Right
- &trans     &trans  &trans      &trans  &trans
- &trans     &trans  &trans      &trans  &trans
-      >;
-    };
- //6
-  Media_layer {
-      display-name = "Media";
-         bindings = <
-//|--------------|-------------|-------------|-------------|---------------|---------------|
-   &studio_unlock &trans        &trans        &trans        &trans          &trans
-   &trans         &kp C_BRI_DEC &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_INC   &trans
-   &trans         &kp C_BRI_DEC &kp C_VOL_DN  &kp C_VOL_UP  &kp C_BRI_INC   &trans
-   &trans         &trans        &trans        &trans        &trans          &trans
-   &trans         &trans                                    &kp HASH        &kp LBRC
-
-//|---------------|-------------|-----------|-------------|---------------|------------|
-   &trans          &trans        &trans      &trans        &trans          &trans
-   &trans          &trans        &trans      &trans        &trans          &trans
-   &trans          &trans        &trans      &trans        &trans          &trans
-   &trans          &trans        &trans      &trans        &trans          &trans
-   &trans          &trans                                  &trans          &trans
-
-// DPAD
-// Left    Down    Middle      Up      Right
-&trans     &trans  &trans      &trans  &trans
-&trans     &trans  &trans      &trans  &trans
+// Left           Down           Middle   Up                 Right
+   &kp C_REWIND   &kp C_VOL_DN   &trans   &kp C_VOL_UP       &kp C_FAST_FORWARD
+   &kp C_PREV     &kp C_STOP     &trans   &kp C_PLAY_PAUSE   &kp C_NEXT
       >;
     };
 
-
-//7
-    Func_layer {
-      display-name = "Function";
-      bindings = <
-//|-----------------|-------------|-----------|-----------|---------------|---------------|
-   &studio_unlock    &trans        &trans      &trans      &trans          &trans
-   &trans            &trans        &trans      &trans      &trans          &trans
-   &trans            &trans        &trans      &trans      &trans          &trans
-   &bootloader       &trans        &trans      &trans      &trans          &trans
-   &trans            &trans                                &trans          &trans
-
-//|---------------|-------------|-----------|-------------|---------------|------------|
-   &trans          &trans        &trans      &trans        &trans          &trans
-   &trans          &kp F7        &kp F8      &kp F9        &kp F10         &trans
-   &trans          &kp F4        &kp F5      &kp F6        &kp F11         &trans
-   &trans          &kp F1        &kp F2      &kp F3        &kp F12         &trans
-   &trans          &trans                                  &trans          &trans
-
- // DPAD
-// Left     Down    Middle      Up      Right
- &trans     &trans  &trans      &trans  &trans
- &trans     &trans  &trans      &trans  &trans
-      >;
-    };
-//8
     Config_layer {
       display-name = "Configuration";
       bindings = <
@@ -359,9 +256,8 @@
       >;
     };
 
-   //9
-     Mouse_layerAuto {
-      display-name = "Mouse_Auto";
+     Mouse_layer {
+      display-name = "Mouse";
       bindings = <
 //|------------|-------------|-----------|-----------|---------------|------|
    &trans       &trans        &trans      &trans      &trans          &trans
@@ -384,7 +280,6 @@
          >;
        };
 
-//10'
      Scroll_layer {
       display-name = "Scroll";
       bindings = <
@@ -408,33 +303,6 @@
  &trans     &trans  &trans      &trans  &trans
       >;
     };
-
-
-
-
-#ifdef HAS_MOUSE_KEYS
-
-#endif
-#ifdef HAS_MOUSE_TP
-//         // You can find the defines for the actual key press behaviors in `include/mouse_tp.dtsi`.
-//         MouseSettings_layer {
-//           display-name = "TP Set";
-//           bindings = <
-//     // ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮    ╭────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────┬────────────────────────╮
-//          U_TOG_TP_SET             U_TOG_TP_SET             &none                    U_MSS_TP_S_D             U_MSS_TP_S_I             U_MSS_TP_PT_I                 U_MSS_TP_PT_I            U_MSS_TP_S_D             U_MSS_TP_S_I             &none                    U_TOG_TP_SET              U_TOG_TP_SET
-//     // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-//          U_MSS_RESET              U_MSS_RESET              &none                    U_MSS_TP_NI_D            U_MSS_TP_NI_I            U_MSS_TP_PT_D                 U_MSS_TP_PT_D            U_MSS_TP_NI_D            U_MSS_TP_NI_I            &none                    U_MSS_RESET               U_MSS_RESET
-//     // ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┤
-//          U_MSS_LOG                U_MSS_LOG                &none                    U_MSS_TP_V6_D            U_MSS_TP_V6_I            &none                         &none                    U_MSS_TP_V6_D            U_MSS_TP_V6_I            &none                    U_MSS_LOG                 U_MSS_LOG
-//     // ╰────────────────────────┴────────────────────────┴────────────────────────┴────────────────────────┼────────────────────────┼────────────────────────┤    ├────────────────────────┼────────────────────────┼────────────────────────┼────────────────────────┴────────────────────────┼────────────────────────╯
-//                                                                                     &trans                   &mkp LCLK                &mkp RCLK                     &none                    &mkp LCLK                &mkp RCLK
-//     //                                                                            ╰────────────────────────┴────────────────────────┴────────────────────────╯    ╰────────────────────────┴────────────────────────┴────────────────────────╯
-//           >;
-//         };
-
-
-#endif
-
 
     Plover_layer {
       display-name = "Plover";
