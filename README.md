@@ -13,4 +13,66 @@ https://www.xvxchannel.com/collections/low-profile-keycaps/products/xvx-skyline-
 the keycaps are the same height as the plastics, which is very pleasing.
 
 ## Keymap
+
 ![Plot of keymap found in boards/shields/yk_do52pro/yk_do52pro.keymap](keymap-drawer-env/keymap.svg)
+
+## Build
+
+See <https://zmk.dev/docs/development/local-toolchain/build-flash> for proper
+instructions. I use something like
+
+```sh
+# ZMK is cloned into $BASE/zmk, this repo is at $BASE/zmk-config-do52pro
+
+# In $BASE/zmk
+west init -l app/
+west update
+
+# Uncomment to enable USB logging
+# LOG="-S zmk-usb-logging"
+
+# In $BASE/zmk/app
+west build \
+  $LOG \
+  -d build/settings_reset \
+  -b "nice_nano_v2" \
+  -- \
+  -DSHIELD="settings_reset"
+
+west build \
+  $LOG \
+  -d build/left \
+  -b "nice_nano_v2" \
+  -- \
+  -DZMK_CONFIG="$BASE/zmk-config-do52pro/config" \
+  -DSHIELD="yk_do52pro_left" \
+  -DZMK_EXTRA_MODULES="$BASE/zmk-config-do52pro;$BASE/zmk/zmk-helpers;$BASE/zmk/kb_zmk_ps2_mouse_trackpoint_driver"
+
+west build \
+  $LOG \
+  -d build/right \
+  -b "nice_nano_v2" \
+  -- \
+  -DZMK_CONFIG="$BASE/zmk-config-do52pro/config" \
+  -DSHIELD="yk_do52pro_right" \
+  -DZMK_EXTRA_MODULES="$BASE/zmk-config-do52pro;$BASE/zmk/zmk-helpers;$BASE/zmk/kb_zmk_ps2_mouse_trackpoint_driver"
+```
+
+## Bootloader update
+
+This allows the boards to have a name like DO52PRO_LH/DO52PRO_RH which makes it
+easier when flashing.
+
+```sh
+❯ cd Adafruit_nRF52_Bootloader/
+❯ make \
+  BOARD=do52pro \
+  LEFT_HALF=1 \
+  SERIAL=/dev/serial/by-id/usb-... \
+  flash-dfu
+❯ make \
+  BOARD=do52pro \
+  RIGHT_HALF=1 \
+  SERIAL=/dev/serial/by-id/usb-... \
+  flash-dfu
+```
