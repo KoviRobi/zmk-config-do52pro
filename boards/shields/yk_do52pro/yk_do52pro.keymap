@@ -72,7 +72,7 @@
 
 
 #define QUICK_TAP_MS 250
-#define TAPPING_TERM_MS 175
+#define TAPPING_TERM_MS 125
 
 
 // Disable line-wrap in your editor to see a "visualization" of the key layouts
