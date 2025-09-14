@@ -25,7 +25,7 @@ instructions. I use something like
 # ZMK is cloned into $BASE/zmk, this repo is at $BASE/zmk-config-do52pro
 
 # In $BASE/zmk
-west init -l app/
+west init -l --mf "$BASE/zmk-config-do52pro/config/west.yml" app/
 west update
 
 # Uncomment to enable USB logging
@@ -56,6 +56,16 @@ west build \
   -DZMK_CONFIG="$BASE/zmk-config-do52pro/boards/shields/yk_do52pro" \
   -DSHIELD="yk_do52pro_right" \
   -DZMK_EXTRA_MODULES="$BASE/zmk-config-do52pro;$BASE/zmk/zmk-helpers;$BASE/zmk/kb_zmk_ps2_mouse_trackpoint_driver"
+```
+
+and flash with
+
+```
+# To have time to register after using it to send the bootloader key combo
+sleep 10
+cp build/left/zephyr/zmk.uf2 /run/media/rmk/DO52PRO_LH  &
+cp build/right/zephyr/zmk.uf2 /run/media/rmk/DO52PRO_RH &
+wait
 ```
 
 ## Bootloader update
