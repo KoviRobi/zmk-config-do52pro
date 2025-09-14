@@ -21,8 +21,8 @@ layers:
   - {t: '&tdcaps', h: LSHIFT}
   - {t: Z, h: LMETA}
   - {t: X, h: LMETA}
-  - {t: C, h: LALT}
-  - {t: V, h: RALT}
+  - {t: C, h: RALT}
+  - {t: V, h: LALT}
   - {t: B, h: Mirror}
   - INS
   - DEL
