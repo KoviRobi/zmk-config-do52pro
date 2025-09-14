@@ -142,7 +142,7 @@
    &kp EQUAL         &kp N1        &kp N2        &kp N3       &kp N4            &kp N5
    &kp BSLH          &kp Q         &kp W         &kp E        &kp R             &kp T
    &kp ESC           &hml LSHIFT A &hml LSHIFT S &hml LCTRL D &hml LCTRL F      &kp G
-   &lshift LSHIFT 0  &hml LMETA Z  &hml LMETA X  &hml LALT C  &hml RALT V       &tl MIRROR B
+   &lshift LSHIFT 0  &hml LMETA Z  &hml LMETA X  &hml RALT C  &hml LALT V       &tl MIRROR B
    &kp INS           &kp DEL                                  &tl MIRROR SPACE  &tl SYMBOL BSPC
 
 //|---------------|-------------|----------------|---------------|----------------|-------------|
