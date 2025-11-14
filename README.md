@@ -44,7 +44,7 @@ west build \
   -d build/left \
   -b "nice_nano_v2" \
   -- \
-  -DZMK_CONFIG="$BASE/zmk-config-do52pro/config" \
+  -DZMK_CONFIG="$BASE/zmk-config-do52pro/boards/shields/yk_do52pro" \
   -DSHIELD="yk_do52pro_left" \
   -DZMK_EXTRA_MODULES="$BASE/zmk-config-do52pro;$BASE/zmk/zmk-helpers;$BASE/zmk/kb_zmk_ps2_mouse_trackpoint_driver"
 
@@ -53,7 +53,7 @@ west build \
   -d build/right \
   -b "nice_nano_v2" \
   -- \
-  -DZMK_CONFIG="$BASE/zmk-config-do52pro/config" \
+  -DZMK_CONFIG="$BASE/zmk-config-do52pro/boards/shields/yk_do52pro" \
   -DSHIELD="yk_do52pro_right" \
   -DZMK_EXTRA_MODULES="$BASE/zmk-config-do52pro;$BASE/zmk/zmk-helpers;$BASE/zmk/kb_zmk_ps2_mouse_trackpoint_driver"
 ```
