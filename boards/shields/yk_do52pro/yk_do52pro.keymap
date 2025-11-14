@@ -155,7 +155,7 @@
 // DPAD
 // Left   Down       Middle      Up         Right
 &kp LEFT  &kp DOWN   &kp PSCRN   &kp UP     &kp RIGHT
-&kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
+&kp HOME  &none      &kp INS     &kp PG_UP  &kp END
       >;
     };
 
@@ -202,7 +202,7 @@
 
 // DPAD
 // Left   Down       Middle      Up         Right
-&kp HOME  &kp PG_DN  &kp INS     &kp PG_UP  &kp END
+&kp HOME  &none      &kp INS     &kp PG_UP  &kp END
 &kp LEFT  &kp DOWN   &kp PSCRN   &kp UP     &kp RIGHT
       >;
     };

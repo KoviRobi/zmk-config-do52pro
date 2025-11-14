@@ -62,7 +62,7 @@ layers:
   - UP
   - RIGHT
   - HOME
-  - PG DN
+  - ''
   - INS
   - PG UP
   - END
@@ -191,7 +191,7 @@ layers:
   - DEL
   - INS
   - HOME
-  - PG DN
+  - ''
   - INS
   - PG UP
   - END
