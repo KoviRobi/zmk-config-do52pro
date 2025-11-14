@@ -14,7 +14,7 @@
     };
 
     zephyr-nix = {
-      url = "github:adisbladis/zephyr-nix";
+      url = "github:nix-community/zephyr-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         zephyr.follows = "zephyr";
@@ -109,21 +109,29 @@
                 ];
               segger-jlink.acceptLicense = true;
               permittedInsecurePackages = [
-                "segger-jlink-qt4-810"
+                "segger-jlink-qt4-874"
               ];
             };
           };
 
           devShells.default = pkgs.mkShell {
             packages = [
-              (zephyr.sdk.override {
+              (zephyr.sdk-0_16.override {
                 targets = [
                   "arm-zephyr-eabi"
                 ];
               })
-              zephyr.pythonEnv
+              (zephyr.pythonEnv.override {
+                extraPackages = ps: [
+                  ps.setuptools
+                  ps.protobuf
+                  ps.grpcio-tools
+                ];
+              })
               # Use zephyr.hosttools-nix to use nixpkgs built tooling instead of official Zephyr binaries
               zephyr.hosttools-nix
+              pkgs.protobuf
+              pkgs.nanopb
               pkgs.cmake
               pkgs.ninja
               pkgs.uv
