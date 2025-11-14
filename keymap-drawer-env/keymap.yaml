@@ -8,7 +8,7 @@ layers:
   - '5'
   - \
   - Q
-  - {t: W, h: RALT}
+  - W
   - E
   - R
   - T
@@ -22,7 +22,7 @@ layers:
   - {t: Z, h: LMETA}
   - {t: X, h: LMETA}
   - {t: C, h: LALT}
-  - {t: V, h: LALT}
+  - {t: V, h: RALT}
   - {t: B, h: Mirror}
   - INS
   - DEL
@@ -47,12 +47,12 @@ layers:
   - {t: ;, h: RSHIFT}
   - {t: '''', h: Scroll}
   - {t: N, h: Mirror}
-  - {t: M, h: RALT}
+  - {t: M, h: LALT}
   - {t: ',', h: RALT}
   - {t: ., h: RMETA}
   - {t: /, h: RMETA}
   - {t: ), h: RSHFT}
-  - {t: TAB, h: Configuration}
+  - {t: TAB, h: Symbol}
   - {t: RET, h: Mirror}
   - PRINTSCREEN
   - PAUSE BREAK
@@ -119,8 +119,8 @@ layers:
   - .
   - /
   - \
-  - '&mkp DEL'
-  - '&mkp RET'
+  - DEL
+  - RET
   - LALT
   - RALT
   - LEFT
@@ -155,13 +155,13 @@ layers:
   - {t: ), h: RSHFT}
   - {t: /, h: RMETA}
   - {t: ., h: RMETA}
-  - {t: ',', h: RALT}
+  - {t: ',', h: LALT}
   - {t: M, h: RALT}
-  - {t: N, h: Mirror, type: held}
+  - {t: N, h: Configuration, type: held}
   - PAUSE BREAK
   - PRINTSCREEN
-  - {t: RET, h: Mirror}
-  - {t: TAB, h: Configuration}
+  - {t: RET, h: Configuration}
+  - {t: TAB, h: Symbol}
   - '5'
   - '4'
   - '3'
@@ -180,14 +180,14 @@ layers:
   - {t: S, h: LSHIFT}
   - {t: A, h: LSHIFT}
   - ESC
-  - {t: B, h: Mirror}
+  - {t: B, h: Configuration}
   - {t: V, h: LALT}
-  - {t: C, h: LALT}
+  - {t: C, h: RALT}
   - {t: X, h: LMETA}
   - {t: Z, h: LMETA}
   - {t: '&tdcaps', h: LSHIFT}
   - {t: BSPC, h: Symbol}
-  - {t: SPACE, h: Mirror}
+  - {t: SPACE, h: Configuration}
   - DEL
   - INS
   - HOME
@@ -291,7 +291,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -320,7 +320,7 @@ layers:
   - {t: BT DISC, h: '3'}
   - {t: BT DISC, h: '4'}
   - '&bootloader'
-  - {type: held}
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

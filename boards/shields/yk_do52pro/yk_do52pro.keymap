@@ -141,17 +141,17 @@
       bindings = <
 //|-----------------|-------------|-------------|------------|-----------------|--------------|
    &kp EQUAL         &kp N1        &kp N2        &kp N3       &kp N4            &kp N5
-   &kp BSLH          &kp Q         &hml RALT W   &kp E        &kp R             &kp T
+   &kp BSLH          &kp Q         &kp W         &kp E        &kp R             &kp T
    &kp ESC           &hml LSHIFT A &hml LSHIFT S &hml LCTRL D &hml LCTRL F      &kp G
-   &lshift LSHIFT 0  &hml LMETA Z  &hml LMETA X  &hml LALT C  &hml LALT V       &tl MIRROR B
+   &lshift LSHIFT 0  &hml LMETA Z  &hml LMETA X  &hml LALT C  &hml RALT V       &tl MIRROR B
    &kp INS           &kp DEL                                  &tl MIRROR SPACE  &tl SYMBOL BSPC
 
 //|---------------|-------------|----------------|---------------|----------------|-------------|
    &kp N0          &kp N6        &kp N7           &kp N8          &kp N9           &kp MINUS
    &kp Y           &kp U         &kp I            &tl SCROLL_TP O &tl MOUSE P      &tl SCROLL_TP EQUAL
    &kp H           &hmr RCTRL J  &hmr RCTRL K     &hmr RSHIFT L   &hmr RSHIFT SEMI &tl SCROLL_TP SQT
-   &tl MIRROR N    &hmr RALT  M  &hmr RALT  COMMA &hmr RMETA DOT  &hmr RMETA FSLH  &hmr RSHFT RPAR
-   &tl CONFIG TAB  &tl MIRROR RET                                 &kp PRINTSCREEN  &kp PAUSE_BREAK
+   &tl MIRROR N    &hmr LALT  M  &hmr RALT  COMMA &hmr RMETA DOT  &hmr RMETA FSLH  &hmr RSHFT RPAR
+   &tl SYMBOL TAB  &tl MIRROR RET                                 &kp PRINTSCREEN  &kp PAUSE_BREAK
 
 // DPAD
 // Left   Down       Middle      Up         Right
@@ -191,15 +191,15 @@
    &kp MINUS           &kp N9           &kp N8          &kp N7           &kp N6         &kp N0
    &tl SCROLL_TP EQUAL &tl MOUSE P      &tl SCROLL_TP O &kp I            &kp U          &kp Y
    &tl SCROLL_TP SQT   &hmr RSHIFT SEMI &hmr RSHIFT L   &hmr RCTRL K     &hmr RCTRL J   &kp H
-   &hmr RSHFT RPAR     &hmr RMETA FSLH  &hmr RMETA DOT  &hmr RALT  COMMA &hmr RALT  M   &tl MIRROR N
-   &kp PAUSE_BREAK     &kp PRINTSCREEN                                   &tl MIRROR RET &tl CONFIG TAB
+   &hmr RSHFT RPAR     &hmr RMETA FSLH  &hmr RMETA DOT  &hmr LALT  COMMA &hmr RALT  M   &tl CONFIG N
+   &kp PAUSE_BREAK     &kp PRINTSCREEN                                   &tl CONFIG RET &tl SYMBOL TAB
 
 //|-----------------|-----------------|------------|-------------|-------------|---------------|
    &kp N5            &kp N4            &kp N3       &kp N2        &kp N1        &kp EQUAL
    &kp T             &kp R             &kp E        &hml RALT W   &kp Q         &kp BSLH
    &kp G             &hml LCTRL F      &hml LCTRL D &hml LSHIFT S &hml LSHIFT A &kp ESC
-   &tl MIRROR B      &hml LALT V       &hml LALT C  &hml LMETA X  &hml LMETA Z  &lshift LSHIFT 0
-   &tl SYMBOL BSPC   &tl MIRROR SPACE                             &kp DEL       &kp INS
+   &tl CONFIG B      &hml LALT V       &hml RALT C  &hml LMETA X  &hml LMETA Z  &lshift LSHIFT 0
+   &tl SYMBOL BSPC   &tl CONFIG SPACE                             &kp DEL       &kp INS
 
 // DPAD
 // Left   Down       Middle      Up         Right
