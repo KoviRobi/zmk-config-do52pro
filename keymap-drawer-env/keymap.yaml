@@ -226,7 +226,7 @@ layers:
   - ']'
   - '!'
   - {t: Game, h: toggle}
-  - {t: ▽, type: trans}
+  - NUBS
   - {t: Base, h: toggle}
   - {type: held}
   - F7
@@ -255,7 +255,7 @@ layers:
   - _
   - {t: ▽, type: trans}
   - {t: Base, h: toggle}
-  - ''
+  - NUBS
   - {t: Game, h: toggle}
   - REWIND
   - VOL DN
