@@ -35,14 +35,14 @@ west update
 west build \
   $LOG \
   -d build/settings_reset \
-  -b "nice_nano_v2" \
+  -b "nice_nano@2.0.0//zmk" \
   -- \
   -DSHIELD="settings_reset"
 
 west build \
   $LOG \
   -d build/left \
-  -b "nice_nano_v2" \
+  -b "nice_nano@2.0.0//zmk" \
   -- \
   -DZMK_CONFIG="$BASE/zmk-config-do52pro/boards/shields/yk_do52pro" \
   -DSHIELD="yk_do52pro_left" \
@@ -51,7 +51,7 @@ west build \
 west build \
   $LOG \
   -d build/right \
-  -b "nice_nano_v2" \
+  -b "nice_nano@2.0.0//zmk" \
   -- \
   -DZMK_CONFIG="$BASE/zmk-config-do52pro/boards/shields/yk_do52pro" \
   -DSHIELD="yk_do52pro_right" \
