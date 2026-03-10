@@ -1,5 +1,6 @@
 #!/bin/sh
 SCRIPTDIR=$(dirname "$(realpath "$0")")
+cd "${SCRIPTDIR}"
 
 uv run keymap parse -z "$(realpath "$SCRIPTDIR/../boards/shields/yk_do52pro/yk_do52pro.keymap")" >keymap.yaml
 
