@@ -22,3 +22,4 @@ include:
   # https://zmk.dev/docs/troubleshooting#split-keyboard-halves-unable-to-pair
   - board: nice_nano@2.0.0//zmk
     shield: settings_reset
+    snippet: zmk-usb-logging
