@@ -302,13 +302,13 @@ layers:
   - {t: BT, h: '3'}
   - {t: BT, h: '4'}
   - {t: BT, h: '5'}
-  - BT CLR
+  - {t: ▽, type: trans}
   - BT PRV
   - OUT USB
   - OUT BLE
   - BT NXT
   - {t: ▽, type: trans}
-  - BT CLR ALL
+  - {t: ▽, type: trans}
   - OUT TOG
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -322,8 +322,8 @@ layers:
   - '&bootloader'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - BT CLR
+  - BT CLR ALL
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
